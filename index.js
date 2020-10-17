@@ -12,6 +12,7 @@ module.exports = class StereoCord extends Plugin {
       }
 
       setTransportOptions (obj) {
+        console.log(obj)
         if (obj.audioEncoder) {
           obj.audioEncoder.params = { stereo: '1' };
           obj.audioEncoder.channels = 2;
@@ -19,8 +20,8 @@ module.exports = class StereoCord extends Plugin {
         if (obj.fec) {
           obj.fec = false;
         }
-        if (obj.encodingVoiceBitRate < 448) {
-          obj.encodingVoiceBitRate = 448;
+        if (obj.encodingVoiceBitRate < 448000) {
+          obj.encodingVoiceBitRate = 448000;
         }
 
 
