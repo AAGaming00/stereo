@@ -7,7 +7,7 @@ module.exports = class StereoCord extends Plugin {
     this.VoiceConnection = getModule([ 'getVoiceEngine' ], false).getVoiceEngine().VoiceConnection;
     class Stereo extends this.VoiceConnection {
       setTransportOptions (obj) {
-        console.log(obj);
+        console.log('setTransportOptions called:', obj);
         if (obj.audioEncoder) {
           obj.audioEncoder.params = { stereo: '2' };
           obj.audioEncoder.channels = 2;
